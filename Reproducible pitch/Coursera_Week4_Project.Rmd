@@ -1,0 +1,68 @@
+---
+title: "Developing Data Products"
+subtitle: "Course Project Week 4: Shiny App & Reproducible Pitch"
+author: "David Arcos"
+date: "2023-07-25"
+output:
+  ioslides_presentation: default
+  html_document:
+    number_sections: yes
+mode: selfcontained
+job: Reproducible Pitch Presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(gapminder)
+```
+
+## Project Overview
+
+Using an excert of the Gapminder data, this Shiny App shows: 
+
+- The relationship between the life expectancy and GDP per capita, by continent.
+- The relationship between the life expectancy and GDP per capita, by country.
+- The whole data for a single country, presented in a table format.
+
+The deployed application in the Shiny server can be found in the flollowing link:
+
+- [Shiny App](https://pages.github.com/)
+
+The source code repository link is: 
+
+- [GitHub Repository](https://pages.github.com/)
+
+## Data for analysis
+
+This Shiny App uses the *Gapminder* dataset, which consists of an excerpt of the Gapminder data on life expectancy, GDP per capita and population by country between 1952 and 2007. 
+
+```{r, include=TRUE, echo=TRUE, warning=FALSE,message=FALSE}
+data("gapminder")
+head(gapminder)
+```
+
+## Application Panel
+
+### Sidebar Panel:
+
+- A `selectInput` widget to select continents or a single country
+- A `sliderInput` widget to select the range of years to present the data
+- A `checkboxInput` widget to show the data for each country selected.
+
+### Main Panel 
+
+- Two `scatterplots` about the relationship between life expectancy and GDP per capita
+- If the checkbox is marked, a `data table` will be shown with the whole data for a single country.
+
+
+## User Manual
+
+Once the app is open: 
+
+1. Select one or more continents to show in **Plot 1** how are life expectancy and GDP per capita related.
+2. Select one country at a time to show in **Plot 2** how are life expectancy and GDP per capita related in a single country.
+3. Also, you can check the box to show a **Data table** with all the data from 1952 to 2007 for the selected country in the previous step.
+
+
+
+
